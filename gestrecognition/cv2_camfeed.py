@@ -1,8 +1,9 @@
-import numpy as np
-import cv2
-import pynput as pyp
+import numpy as np # dependency needed for opencv
+import cv2 # opencv engine
 
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(0) # define camera connected to host 
+cam.set(3, 320) # set horizontal size of camera
+cam.set(4, 240) # set vertical size of camera
 
 while True:
     b, img = cam.read()
