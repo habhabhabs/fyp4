@@ -101,8 +101,9 @@ while True:
             cv2.putText(frame,'Talk now',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
             # Press and release space
             keyboard.press(Key.space)
-            time.sleep(7) # hold space bar for seven seconds
+            time.sleep(5) # hold space bar for 5 seconds
             keyboard.release(Key.space)
+            
         elif l==6:
             cv2.putText(frame,'reposition',(0,50), font, 2, (0,0,255), 3, cv2.LINE_AA)
             
