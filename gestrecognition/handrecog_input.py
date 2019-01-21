@@ -37,7 +37,7 @@ while True:
         # identifying the contours of hand
         _, contours, hierarchy= cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     
-        # find contour of max area (hand)
+        # find maximum area for hand contour
         cnt = max(contours, key = lambda x: cv2.contourArea(x))
         
         # provide close approximation of contour
@@ -47,7 +47,7 @@ while True:
         # generate a convex hull surrounding the hand
         hull = cv2.convexHull(cnt)
         
-        # create the contours of hull and of hand
+        # create the contours of hull and surrounding of hand
         areahull = cv2.contourArea(hull)
         areacnt = cv2.contourArea(cnt)
     
@@ -55,7 +55,7 @@ while True:
         arearatio = ((areahull - areacnt) / areacnt) * 100
     
         # identify all the defects in convex hull (lowest points between fingers, aka gap)
-        hull = cv2.convexHull(approx, returnPoints=False)
+        hull = cv2.convexHull(approx, returnPoints = False)
         defects = cv2.convexityDefects(approx, hull)
         
         # l = no. of defects (gap between two fingers)
