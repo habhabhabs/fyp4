@@ -4,6 +4,7 @@ import math
 from pynput.keyboard import Key, Controller
 import time
 
+print("Starting gesture recognition engine...")
 cam = cv2.VideoCapture(0)
 keyboard = Controller()
 bufferLock: bool = False
@@ -98,7 +99,7 @@ while True:
         
         # if there are five fingers in detection region
         if l == 5:
-            cv2.putText(frame, 'Talk now', (10, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
+            cv2.putText(frame, 'Talk now', (150, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
             # Press and release space
             time.sleep(1)
             keyboard.press(Key.space)
@@ -110,7 +111,7 @@ while True:
             while t > 0:
                 mins, secs = divmod(t, 60)
                 timeformat = '{:02d}:{:02d}'.format(mins, secs)
-                print(timeformat, end='\r')
+                print(("Holding space bar for: " + timeformat), end = '\r')
                 time.sleep(1)
                 t -= 1
             keyboard.release(Key.space)
@@ -121,14 +122,14 @@ while True:
                 while t > 0:
                     mins, secs = divmod(t, 60)
                     timeformat = '{:02d}:{:02d}'.format(mins, secs)
-                    print(timeformat, end='\r')
+                    print(("Timeout before next press: " + timeformat), end = '\r')
                     time.sleep(1)
                     t -= 1
                 bufferLock = False
 
 
         else :
-            cv2.putText(frame, 'Wave hand', (10, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
+            cv2.putText(frame, 'Wave hand', (150, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
             
         #show the windows
         cv2.imshow('Mask', mask)
