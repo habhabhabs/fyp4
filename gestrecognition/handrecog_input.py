@@ -69,7 +69,6 @@ while True:
             far = tuple(approx[f][0])
             pt = (100, 180)
             
-            
             # find length of all sides of triangle (three points: finger 1, finger 2, defect)
             a = math.sqrt((end[0] - start[0]) ** 2 + (end[1] - start[1]) ** 2)
             b = math.sqrt((far[0] - start[0]) ** 2 + (far[1] - start[1]) ** 2)
