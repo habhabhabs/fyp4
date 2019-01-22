@@ -19,7 +19,7 @@ while True:
         # define region of interest (detection area)
         roi = frame[100:300, 100:300]
         cv2.rectangle(frame, (100, 100), (300, 300), (0, 255, 0), 0)
-        
+         
         # define range of skin colour in HSV (Hue Saturation Values) 
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
         lower_skin = np.array([0, 20, 70], dtype = np.uint8)
@@ -102,11 +102,11 @@ while True:
             cv2.putText(frame, 'Talk now', (150, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
             # Press and release space
             time.sleep(1)
-            keyboard.press(Key.space)
-
+            
             # start of keypress simulation
             if bufferLock is False:
                 bufferLock = True
+            keyboard.press(Key.space)
             t: int = 6
             while t > 0:
                 mins, secs = divmod(t, 60)
@@ -115,7 +115,7 @@ while True:
                 time.sleep(1)
                 t -= 1
             keyboard.release(Key.space)
-
+            time.sleep(1)
             # completion of execution
             if bufferLock is True:
                 t: int = 4
