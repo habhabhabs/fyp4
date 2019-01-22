@@ -106,6 +106,7 @@ while True:
             # start of keypress simulation
             if bufferLock is False:
                 bufferLock = True
+            
             keyboard.press(Key.space)
             t: int = 6
             while t > 0:
@@ -114,8 +115,10 @@ while True:
                 print(("Holding space bar for: " + timeformat), end = '\r')
                 time.sleep(1)
                 t -= 1
-            keyboard.release(Key.space)
+            if t == 0:
+                keyboard.release(Key.space)
             time.sleep(1)
+
             # completion of execution
             if bufferLock is True:
                 t: int = 4
