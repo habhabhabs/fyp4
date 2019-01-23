@@ -4,7 +4,6 @@ import math
 from pynput.keyboard import Key, Controller
 import time
 import sys
-from pywinauto.keyboard import SendKeys
 
 print("Starting gesture recognition engine...")
 print("Platform detected: " + sys.platform)
@@ -109,21 +108,18 @@ while True:
             if bufferLock is False:
                 bufferLock = True
             
-            if sys.platform == "win32":
-                SendKeys("                                                                                                                                          ", with_spaces=True)
-            else:
-                keyboard.press(Key.space)
-                t: int = 6
-                while t > 0:
-                    mins, secs = divmod(t, 60)
-                    timeformat = '{:02d}:{:02d}'.format(mins, secs)
-                    print(("Holding space bar for: " + timeformat), end = '\r')
-                    time.sleep(1)
-                    t -= 1
-                if t == 0 and sys.platform != "win32":
-                    keyboard.release(Key.space)
+            keyboard.press(Key.space)
+            t: int = 6
+            while t > 0:
+                mins, secs = divmod(t, 60)
+                timeformat = '{:02d}:{:02d}'.format(mins, secs)
+                print(("Holding space bar for: " + timeformat), end = '\r')
                 time.sleep(1)
-
+                t -= 1
+            if t == 0:
+                keyboard.release(Key.space)
+            time.sleep(1)
+ 
             # completion of execution
             if bufferLock is True:
                 t: int = 4
@@ -144,7 +140,7 @@ while True:
 
     except:
         pass
-        
+
     # if hit escape key, exit program
     k = cv2.waitKey(5) & 0xFF
     if k == 27: 
