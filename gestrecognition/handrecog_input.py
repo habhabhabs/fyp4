@@ -120,7 +120,7 @@ while True:
                     print(("Holding space bar for: " + timeformat), end = '\r')
                     time.sleep(1)
                     t -= 1
-                if t == 0 and sys.platform == "win32":
+                if t == 0 and sys.platform != "win32":
                     keyboard.release(Key.space)
                 time.sleep(1)
 
@@ -134,7 +134,6 @@ while True:
                     time.sleep(1)
                     t -= 1
                 bufferLock = False
-
 
         else :
             cv2.putText(frame, 'Wave hand', (150, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
