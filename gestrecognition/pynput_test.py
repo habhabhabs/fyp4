@@ -1,10 +1,14 @@
-from pynput.keyboard import Key, Controller
+import time
 
-keyboard = Controller()
+import pykeyboard
 
-keyboard.press(Key.space)
-while True:
-    pass
-keyboard.release(Key.space)
-print("end printing.")
 
+# TODO: Replace following two lines with the code that activate the application.
+print('Activate the application 3 seconds.')
+time.sleep(3)
+
+k = pykeyboard.PyKeyboard()
+k.press_key(k.left_key)
+time.sleep(1) # Hold down left key for 1 second.
+k.release_key(k.left_key)
+ 
