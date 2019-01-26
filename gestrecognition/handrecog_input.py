@@ -19,7 +19,6 @@ print("Platform detected: " + sys.platform)
 cam = cv2.VideoCapture(0)
 keyboard = Controller()
 bufferLock: bool = False
-ifWindowAlwaysOnTop: bool = False
  
 # assuming that the default browser is WebGL enabled (latest version of Chrome or Firefox)
 print("Starting chatbot host interface...")
@@ -153,7 +152,7 @@ while True:
         cv2.imshow('Detection Frame', frame)
 
         os.system("wmctrl -a Detection Frame -b toggle,above")
-        
+
     except:
         pass
 
