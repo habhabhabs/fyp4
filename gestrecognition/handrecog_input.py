@@ -4,13 +4,27 @@ import math
 from pynput.keyboard import Key, Controller
 import time
 import sys
+import webbrowser
+import os
+
+# install wmctrl in ubuntu:
+# sudo apt-get install wmctrl
+
+# use this command to keep Detection Frame window always on top
+# wmctrl -a Detection Frame -b toggle,above
+
 
 print("Starting gesture recognition engine...")
 print("Platform detected: " + sys.platform)
 cam = cv2.VideoCapture(0)
 keyboard = Controller()
 bufferLock: bool = False
+ifWindowAlwaysOnTop: bool = False
  
+# assuming that the default browser is WebGL enabled (latest version of Chrome or Firefox)
+print("Starting chatbot host interface...")
+webbrowser.open_new("https://e7bcddb051074c0b9abceb50f2ce7bd5.us-east-1.sumerian.aws/?")
+
 while True:
     try:  
         # define camera settings
@@ -138,6 +152,8 @@ while True:
         cv2.imshow('Mask', mask)
         cv2.imshow('Detection Frame', frame)
 
+        os.system("wmctrl -a Detection Frame -b toggle,above")
+        
     except:
         pass
 
