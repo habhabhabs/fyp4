@@ -22,7 +22,7 @@ bufferLock: bool = False
  
 # assuming that the default browser is WebGL enabled (latest version of Chrome or Firefox)
 print("Starting chatbot host interface...")
-webbrowser.open_new("https://e7bcddb051074c0b9abceb50f2ce7bd5.us-east-1.sumerian.aws/?")
+webbrowser.open_new("https://us-east-1.sumerian.aws/6f6b932453b5437fbeaa22ec916188cc.scene")
 
 while True:
     try:  
