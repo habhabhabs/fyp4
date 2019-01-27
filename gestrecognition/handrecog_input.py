@@ -158,6 +158,8 @@ while True:
             cv2.putText(frame, 'Wave hand', (150, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
             
         # show the windows
+        cv2.namedWindow('Detection Frame',cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('Detection Frame', 320, 240)
         cv2.imshow('Mask', mask)
         cv2.imshow('Detection Frame', frame)
 
