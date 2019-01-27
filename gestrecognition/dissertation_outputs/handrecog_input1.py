@@ -21,7 +21,7 @@ import os
 # defining opencv libraries
 print("Starting gesture recognition engine...")
 print("Platform detected: " + sys.platform)
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(1)
 
 # defining pynput libraries
 keyboard = Controller()
@@ -54,11 +54,11 @@ while True:
         # filling dark spots by extrapolating the hand's image step 4
         mask = cv2.dilate(mask, kernel, iterations = 4)
         
-        # # use gaussian blur to enhance detection and binary conversion of image step 5
-        # mask = cv2.GaussianBlur(mask, (5, 5), 100) 
+        # use gaussian blur to enhance detection and binary conversion of image step 5
+        mask = cv2.GaussianBlur(mask, (5, 5), 100) 
         
-        # # identifying the contours of hand 
-        # mask, contours, hierarchy= cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        # identifying the contours of hand step 6
+        mask, contours, hierarchy= cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     
         # # find maximum area for hand contour
         # cnt = max(contours, key = lambda x: cv2.contourArea(x))
@@ -81,8 +81,8 @@ while True:
         # hull = cv2.convexHull(approx, returnPoints = False)
         # defects = cv2.convexityDefects(approx, hull)
         
-        # l = no. of defects (gap between two fingers)
-        l = 0
+        # # l = no. of defects (gap between two fingers)
+        # l = 0
         
         # # code for finding no. of defects (gaps between fingers) after identifying
         # for i in range(defects.shape[0]):
@@ -158,9 +158,9 @@ while True:
         #     cv2.putText(frame, 'Wave hand', (150, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
             
         # show the windows
-        cv2.namedWindow('step 4',cv2.WINDOW_NORMAL)
-        cv2.resizeWindow('step 4', 640, 480)
-        cv2.imshow('step 4', frame)
+        cv2.namedWindow('step 6',cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('step 6', 640, 480)
+        cv2.imshow('step 6', mask)
         
 
         # ensure that detection frame is always on top to allow user gauge gesture
