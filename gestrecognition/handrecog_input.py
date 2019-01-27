@@ -7,22 +7,30 @@ import sys
 import webbrowser
 import os
 
+# tested on both opencv version 3.4.1 and 3.2.0.8
+
+# install pynput in pip3:
+# py -3.6 -m pip install pynput
+
 # install wmctrl in ubuntu:
 # sudo apt-get install wmctrl
 
 # use this command to keep Detection Frame window always on top
 # wmctrl -a Detection Frame -b toggle,above
 
-
+# defining opencv libraries
 print("Starting gesture recognition engine...")
 print("Platform detected: " + sys.platform)
 cam = cv2.VideoCapture(0)
+
+# defining pynput libraries
 keyboard = Controller()
 bufferLock: bool = False
- 
+
+# launch amazon sumerian
 # assuming that the default browser is WebGL enabled (latest version of Chrome or Firefox)
 print("Starting chatbot host interface...")
-webbrowser.open_new("https://e7bcddb051074c0b9abceb50f2ce7bd5.us-east-1.sumerian.aws/?")
+webbrowser.open_new("https://us-east-1.sumerian.aws/6f6b932453b5437fbeaa22ec916188cc.scene")
 
 while True:
     try:  
@@ -108,10 +116,10 @@ while True:
         # formula for number of fingers: defects + 1    
         l += 1
         
-        # print corresponding gestures which are in their ranges
+        # setup text display in detection frame
         font = cv2.FONT_HERSHEY_SIMPLEX
         
-        # if there are five fingers in detection region
+        # if there are five fingers in detection region (hand is detected)
         if l == 5:
             cv2.putText(frame, 'Talk now', (150, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
             # Press and release space
@@ -121,38 +129,44 @@ while True:
             if bufferLock is False:
                 bufferLock = True
             
+            # using pynput to hold space bar (only on ubuntu)
             keyboard.press(Key.space)
-            t: int = 6
-            while t > 0:
+            t: int = 6 # hold for six seconds
+            while t > 0: # between 0 and 6 seconds
                 mins, secs = divmod(t, 60)
                 timeformat = '{:02d}:{:02d}'.format(mins, secs)
                 print(("Holding space bar for: " + timeformat), end = '\r')
                 time.sleep(1)
                 t -= 1
-            if t == 0:
+            if t == 0: # when timeout, release spacebar
                 keyboard.release(Key.space)
             time.sleep(1)
  
-            # completion of execution
+            # completion of execution (end of keypress simulation)
             if bufferLock is True:
-                t: int = 4
+                t: int = 4 # cooldown period of four seconds between execution
                 while t > 0:
                     mins, secs = divmod(t, 60)
                     timeformat = '{:02d}:{:02d}'.format(mins, secs)
                     print(("Timeout before next press: " + timeformat), end = '\r')
                     time.sleep(1)
                     t -= 1
-                bufferLock = False
-
+                bufferLock = False 
+        
+        # if hand is not detected
         else :
             cv2.putText(frame, 'Wave hand', (150, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
             
-        #show the windows
+        # show the windows
+        cv2.namedWindow('Detection Frame',cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('Detection Frame', 320, 240)
         cv2.imshow('Mask', mask)
         cv2.imshow('Detection Frame', frame)
 
+        # ensure that detection frame is always on top to allow user gauge gesture
         os.system("wmctrl -a Detection Frame -b toggle,above")
 
+    # code passes here when there is a problem with opencv
     except:
         pass
 
