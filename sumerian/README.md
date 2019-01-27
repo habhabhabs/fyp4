@@ -1,6 +1,6 @@
 # Amazon Sumerian VR display interface for SIT@NYP Interactive Public Display
 ## Importing and Exporting
-To export an Amazon Sumerian project: In Sumerian, open the scene that you wish to export out. Then press Ctrl + E on the keyboard to bring up the Export dialog. Export it as a Zip file and archive it somewhere (e.g. Git repository).
+To export an Amazon Sumerian project: In Sumerian, open the scene that you wish to export out. Then press Ctrl + E on the keyboard to bring up the Export dialog. Export it as a Zip file and archive it somewhere (e.g. Git repository). The Zip file is known as a "bundle".
 
 To import an Amazon Sumerian project: Create a new empty scene in Sumerian, and use the “Import Assets” button at the top and upload the .zip file through the “Import from Disk” option on the right.
 
