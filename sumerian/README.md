@@ -9,4 +9,10 @@ After a few seconds, the scene contents should appear as a new pack in the “As
 Credits to: https://www.andreasjakl.com/download-export-or-backup-amazon-sumerian-scenes-part-6/
 
 ## Changelog
-
+Version 1: 27 January 2019
+- Initial backup to GitHub
+- Set up stage for public display
+- Aligned cameras
+- Added Sumerian host into the scene
+- Lex is linked up to scene
+- YouTube video containing SIT promotional video playlist
