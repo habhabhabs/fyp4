@@ -22,7 +22,6 @@ Operating Requirements:
 - Python 3.6
 - OpenCV 3.2
 - Ubuntu 18.04
-- Windows 10
 
 ## Changelog:
 Version 2.1: 23 January 2019
