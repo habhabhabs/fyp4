@@ -6,7 +6,7 @@ Developed on Python 3.6 `python-3.6` using the following libraries:
 
 To minimise compatibility issues, try to keep executions in Python 3.6.
 - py -3.6 -m pip install pynput
-- Instruction to build Snowboy [here.](install-snowboy/install-instructions.md)
+- Instruction to build Snowboy [here.](install-snowboy/README.md)
 
 Operating Requirements:
 - Python 3.6

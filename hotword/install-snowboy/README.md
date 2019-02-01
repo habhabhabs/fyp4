@@ -1,3 +1,9 @@
+# Compiling `snowboy` binaries for Ubnutu 18.04
+---
+As the official `snowboy` binaries is only up to Ubuntu 14.04 on [it's webpage,](http://docs.kitt.ai/snowboy/#introduction) and Ubuntu 14.04 LTS ending support [until April 2019,](https://wiki.ubuntu.com/Releases), it would be a viable option to build the `snowboy` libraries from Ubuntu 18.04 as it is the latest LTS version and would be supported for the next five years. 
+
+# Guide credits to: [WorldOfPython YouTube](https://www.youtube.com/watch?v=mUEm05ZAhhI)
+
 1."""Install Packages"""
 ```sudo apt-get install python-pyaudio python3-pyaudio sox libpcre3 libpcre3-dev libatlas-base-dev &&
 pip3 install pyaudio
@@ -36,5 +42,3 @@ Copy file `snowboydecoder.py` from `/snowboy/snowboy/examples/Python3` to your p
 Open `https://snowboy.kitt.ai/` , login & register ,create and download your voice model
 Copy your voice model to project `path`
 Now you can use snowboy module in python file from this `path`
-
-Guide credits to: [WorldOfPython YouTube](https://www.youtube.com/watch?v=mUEm05ZAhhI)
