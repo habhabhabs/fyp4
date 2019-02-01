@@ -30,11 +30,11 @@ Save it
 
 
 4."""How to use""
-Copy files from "/snowboy/snowboy/swig/Python3" to your project
-Copy path "resourses" from /snowboy/snowboy to your project path
-Copy file "snowboydecoder.py" from "/snowboy/snowboy/examples/Python3" to your project path
-Open "https://snowboy.kitt.ai/" , login & register ,create and download your voice model
-Copy your voice model to project path
-Now you can use snowboy module in python file from this path
+Copy files from `/snowboy/snowboy/swig/Python3` to your project
+Copy path `resourses` from `/snowboy/snowboy` to your project `path`
+Copy file `snowboydecoder.py` from `/snowboy/snowboy/examples/Python3` to your project `path`
+Open `https://snowboy.kitt.ai/` , login & register ,create and download your voice model
+Copy your voice model to project `path`
+Now you can use snowboy module in python file from this `path`
 
 Guide credits to: [WorldOfPython YouTube](https://www.youtube.com/watch?v=mUEm05ZAhhI)
