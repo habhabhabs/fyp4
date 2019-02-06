@@ -21,7 +21,7 @@ import os
 # defining opencv libraries
 print("Starting gesture recognition engine...")
 print("Platform detected: " + sys.platform)
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(1) # if not run on laptop with built-in webcam, select source 0. Else source 1.
 
 # defining pynput libraries
 keyboard = Controller()
