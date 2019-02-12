@@ -20,7 +20,7 @@ import os
 # defining opencv libraries
 print("Starting gesture recognition engine...")
 print("Platform detected: " + sys.platform)
-cam = cv2.VideoCapture(0) # if not run on laptop with built-in webcam, select source 0. Else source 1.
+cam = cv2.VideoCapture(1) # if not run on laptop with built-in webcam, select source 0. Else source 1.
 
 # defining pynput libraries
 keyboard = Controller()
@@ -39,7 +39,7 @@ while True:
          
         # define range of skin colour in HSV (Hue Saturation Values) 
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
-        lower_skin = np.array([0, 20, 70], dtype = np.uint8)
+        lower_skin = np.array([0, 50, 70], dtype = np.uint8)
         upper_skin = np.array([20, 255, 255], dtype = np.uint8)
         
         # check if skin colour defined matches lower_skin and upper_skin bounds  
@@ -153,7 +153,7 @@ while True:
 
         # show the windows
         cv2.namedWindow('Mask',cv2.WINDOW_NORMAL)
-        cv2.resizeWindow('Mask', 320, 320)
+        cv2.resizeWindow('Mask', 240, 240)
         cv2.imshow('Mask', mask)
         # cv2.imshow('Detection Frame', frame)
 
