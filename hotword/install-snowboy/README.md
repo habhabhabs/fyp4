@@ -16,6 +16,8 @@ cd snowboy
 ```
 
 ```sudo su
+
+
 wget http://downloads.sourceforge.net/swig/swig-3.0.10.tar.gz &&
 tar -xvzf swig-3.0.10.tar.gz &&
 cd swig-3.0.10/ &&   

@@ -1,15 +1,12 @@
 import snowboydecoder
 import sys
 import signal
-import speech_recognition as sr
 import os
 from pynput.keyboard import Key, Controller
 import time
 import webbrowser
 
-# initialise snowboy and pynput
-print("Initialising Snowboy and Pynput...")
-interrupted = False
+
 keyboard = Controller()
 
 # launch amazon sumerian
@@ -17,7 +14,9 @@ keyboard = Controller()
 print("Starting chatbot host interface...")
 webbrowser.open_new("https://us-east-1.sumerian.aws/6f6b932453b5437fbeaa22ec916188cc.scene")
 
-
+# initialise snowboy and pynput
+print("Initialising Snowboy and Pynput...")
+interrupted = False
 def hotwordCallback(fname):
     # start of keypress simulation
     

@@ -121,7 +121,7 @@ while True:
         
         # if there are five fingers in detection region (hand is detected)
         if l == 5:
-            cv2.putText(frame, 'Talk now', (150, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
+            cv2.putText(mask, 'Talk now', (10, 30), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
             # Press and release space
             time.sleep(1)
             
@@ -155,16 +155,17 @@ while True:
         
         # if hand is not detected
         else :
-            cv2.putText(frame, 'Wave hand', (150, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
-            
-        # show the windows
-        cv2.namedWindow('Detection Frame',cv2.WINDOW_NORMAL)
-        cv2.resizeWindow('Detection Frame', 320, 240)
-        cv2.imshow('Mask', mask)
-        cv2.imshow('Detection Frame', frame)
+            cv2.putText(mask, 'Wave hand', (10, 30), font, 1, (200, 200, 200), 2, cv2.LINE_AA)
 
+        # show the windows
+        cv2.namedWindow('Mask',cv2.WINDOW_NORMAL)
+        cv2.resizeWindow('Mask', 320, 320)
+        cv2.imshow('Mask', mask)
+        # cv2.imshow('Detection Frame', frame)
+
+        # use this command to keep Detection Frame window always on top
         # ensure that detection frame is always on top to allow user gauge gesture
-        os.system("wmctrl -a Detection Frame -b toggle,above")
+        os.system("wmctrl -a Mask -b toggle,above")
 
     # code passes here when there is a problem with opencv
     except:
@@ -175,6 +176,7 @@ while True:
     if k == 27: 
         break
     
+detector.terminate()
 cv2.destroyAllWindows()
 cam.release()    
 
