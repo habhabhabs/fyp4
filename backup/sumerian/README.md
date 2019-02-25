@@ -9,10 +9,15 @@ After a few seconds, the scene contents should appear as a new pack in the “As
 Credits to: https://www.andreasjakl.com/download-export-or-backup-amazon-sumerian-scenes-part-6/
 
 ## Changelog
+Version 3: 25 February 2019
+- Changed layout and colours to suit Interactive Public Display at L6.
+- Changed SIT Banner to "Do more as one"
+- Changed Sumerian chatbot's voice from "Salli" back to "Joanna"
+
 Version 2: 1 February 2019
 - Shifted and resized video to left (before right hand of stage)
 - Shifted and resized SIT logo to right (before left hand of stage)
-- Change Sumerrian host's voice from "Joanna" to "Salli".
+- Change Sumerian host's voice from "Joanna" to "Salli".
 
 Version 1: 27 January 2019
 - Initial backup to GitHub
