@@ -14,10 +14,12 @@ Operating Requirements:
 - Ubuntu 18.04 (`snowboy` *only* works in *nix systems)
 
 Instructions:
-- In this directory, run `python3 voicerecognition.py Neo-ya.pmdl` ("Neoya" is the trigger keyword for the chatbot), or
-  - `python3 voicerecognition.py resources/alexa/alexs_02092017.umdl` ("Alexa" is the trigger keyword for the chatbot)
+- In this directory, run  `python3 voicerecognition.py resources/alexa/alexs_02092017.umdl` ("Alexa" is the trigger keyword for the chatbot)
 
 # Changelog:
 Version 1: 30 Jan 2019
 - Added 'Neo-ya' model as an example. But can use 'Alexa' too if desired
 - Support for Ubuntu 18.04 and Sumerian system confirmed.
+
+Version 2: 17 Mar 2019
+- 'Alexa' the official keyword to use to activate chatbot.

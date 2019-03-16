@@ -9,6 +9,13 @@ After a few seconds, the scene contents should appear as a new pack in the “As
 Credits to: https://www.andreasjakl.com/download-export-or-backup-amazon-sumerian-scenes-part-6/
 
 ## Changelog
+Version 4 (FINAL): 9 March 2019
+- For Discovery Day
+- Added animated banner to wave hand or say "Alexa"
+- Added bot Wes for aesthetic purposes
+- Changed banner and added extra images to make things look nicer
+
+
 Version 3: 25 February 2019
 - Changed layout and colours to suit Interactive Public Display at L6.
 - Changed SIT Banner to "Do more as one"

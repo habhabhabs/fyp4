@@ -5,6 +5,9 @@ To **import an Amazon Lex chatbot** from a zip file: https://docs.aws.amazon.com
 
 
 ## Changelog
+Version 6 (FINAL): 17 March 2019
+- Contains minor improvements to detection
+
 Version 4: 20 January 2019
 - Covers the key locations of SIT@NYP.
 - Basic information about SIT

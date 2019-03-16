@@ -16,7 +16,7 @@ How the gesture regognition works:
 - The detection area of gestures only work inside of the green rectangle box.
 - Wave inside the green box to invoke a spacebar hold.
 - Once detected, the script will hold the spacebar for six seconds.
-- Following which, there is a cooldown period (thread sleep) of four seconds before the next wave.
+- Following which, there is a cooldown period (thread sleep) of six seconds before the next wave.
 
 Operating Requirements:
 - Python 3.6
