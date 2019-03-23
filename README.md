@@ -22,6 +22,8 @@ The directory contains the following files:
   - For [**Amazon Lex**](backup/lex/FINAL)
     - Import the entire zip file containing a JSON file into Lex directly. A set of Intents (skills) will then be transferred to your account. You may create an empty chatbot and import the intents manually. Please refer to https://docs.aws.amazon.com/lex/latest/dg/import-export-lex.html for the full set of import/export instructions.
 
+Please refer to the README.md files located in every folder (`application`, `development` and `backup`) if you need more details. Thank you!
+
 Dissertation repo for this project, please clone/fork: https://github.com/habhabhabs/fyp4-interactive-dissertation
 
 FYP Project of Ng Kim Meng 2355364N \
